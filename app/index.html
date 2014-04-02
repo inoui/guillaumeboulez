@@ -1,0 +1,197 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>guillaumeboulez com</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <!-- build:css styles/vendor.css -->
+        <!-- bower:css -->
+        <link rel="stylesheet" href="bower_components/sass-bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="bower_components/fontawesome-clean/font-awesome.min.css" />
+        <!-- endbower -->
+        <!-- endbuild -->
+        <!-- build:css(.tmp) styles/main.css -->
+        <link rel="stylesheet" href="styles/main.css">
+        <!-- endbuild -->
+        <script src="bower_components/modernizr/modernizr.js"></script>
+
+    </head>
+    <body>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        
+        <div id="loading" class="loading">
+            <div class="loading_bar" style="width: 0px;"></div>
+        </div>
+
+
+
+        <section class="home " id="home">
+            
+            <div class="header-text">
+                <h1 class="tlt " >Guillaume Boulez</h1>    
+                <div class="sub-site-title">Styliste - Paris, New York, London</div>            
+            </div>
+
+            <ul class="home-slider list-unstyled">
+                <li style="background-image:url(/l/1200x1200/http://localhost:9000/media/home/home2.jpg)" ><span></span></li>
+                <li style="background-image:url(/l/1200x1200/http://localhost:9000/media/home/home3.jpg)" ><span></span></li>
+                <li style="background-image:url(/l/1200x1200/http://localhost:9000/media/home/home4.jpg)" ><span></span></li>
+                <li style="background-image:url(/l/1200x1200/http://localhost:9000/media/home/home5.jpg)" ><span></span></li>
+                <li style="background-image:url(/l/1200x1200/http://localhost:9000/media/home/home6.jpg)" ><span></span></li>
+            </ul>
+
+        </section>
+
+        <section id="listing">
+            
+        </section>
+
+
+
+
+
+        <script type="text/template" id='workListTpl'>
+        <ul>
+            <% _.each(projects, function(project) { %> 
+                <li  data-bgcoul="<%= project.bgcoul %>">
+
+                    <div style="background-image:url(http://localhost:9000/media/<%= project.path %>/<%= project.thumb %>)" class="<%= project.class %>">
+                        <h2><%= project.title %></h2>
+                        <h3><%= project.publication %></h3>                            
+                    </div>
+
+                </li>
+            <%});%>
+        </ul>
+
+
+        </script>
+
+
+
+
+        <script type="text/template" id='workTpl'>
+
+        <h1><%= project.title %></h1>
+
+        <div id="nav">
+        <ul>
+            <li><a href="#" class="nav-close">x</a></li>
+            <li><a href="#" class="nav-prev">&#8592;</a></li>
+            <li><a href="#" class="nav-next">&#8594;</a></li>
+        </ul>
+        </div>
+
+
+
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                  <div class="swiper-slide credits">
+                    <div>
+                        <h2><%= project.publication %></h2>
+                        
+                        <p>
+<strong>Photographer : </strong><br/>
+Saga Sig<br/>
+<strong>Stylist : </strong><br/>
+Guillaume Boulez<br/>
+<strong>Hair stylist : </strong><br/>
+Lok Lau @ CLM<br/>
+<strong>Make Up artist : </strong><br/>
+Celia Burton @ CLM<br/>
+<strong>Manicurist : </strong><br/>
+Jessica Hoffman @ Caren <br/>
+using Sally Hansen<br/>
+<strong>Set Designer : </strong><br/>
+Thomas Petherick<br/>
+<strong>Stylist’s assistants : </strong><br/>
+Remi Meunier and Margaux Rebois<br/>
+<strong>Hair stylist’s assistant : </strong><br/>
+Liv Holst                        </p>
+
+                    </div>
+                  </div>
+
+                <% _.each(project.data, function(slide) { %> 
+                  <div class="swiper-slide"  style="width:200px;">
+                    <img src="http://localhost:9000/media/<%= project.path %>/<%= slide %>" alt="">
+                  </div>
+                <%});%>              
+
+              </div>
+            </div>
+
+        </script>
+
+
+
+        <!-- build:js scripts/vendor.js -->
+        <!-- bower:js -->
+        <script src="bower_components/jquery/jquery.js"></script>
+        <script src="bower_components/underscore/underscore.js"></script>
+        <script src="bower_components/classie/classie.js"></script>
+        <script src="bower_components/get-style-property/get-style-property.js"></script>
+        <script src="bower_components/get-size/get-size.js"></script>
+        <script src="bower_components/eventie/eventie.js"></script>
+        <script src="bower_components/doc-ready/doc-ready.js"></script>
+        <script src="bower_components/eventEmitter/EventEmitter.js"></script>
+        <script src="bower_components/jquery-bridget/jquery.bridget.js"></script>
+        <script src="bower_components/matches-selector/matches-selector.js"></script>
+        <script src="bower_components/outlayer/item.js"></script>
+        <script src="bower_components/outlayer/outlayer.js"></script>
+        <script src="bower_components/packery/js/rect.js"></script>
+        <script src="bower_components/packery/js/packer.js"></script>
+        <script src="bower_components/packery/js/item.js"></script>
+        <script src="bower_components/packery/js/packery.js"></script>
+        <script src="bower_components/imagesloaded/imagesloaded.js"></script>
+        <script src="bower_components/swiper/dist/idangerous.swiper.js"></script>
+        <script src="bower_components/sass-bootstrap/dist/js/bootstrap.js"></script>
+        <!-- endbower -->
+        <script src="bower_components/textillate/jquery.textillate.js"></script>
+        <script src="bower_components/textillate/assets/jquery.fittext.js"></script>
+        <script src="bower_components/textillate/assets/jquery.lettering.js"></script>
+
+        <!-- endbuild -->
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+
+        <!-- build:js scripts/plugins.js -->
+        <script src="bower_components/sass-bootstrap/js/affix.js"></script>
+        <script src="bower_components/sass-bootstrap/js/alert.js"></script>
+        <script src="bower_components/sass-bootstrap/js/dropdown.js"></script>
+        <script src="bower_components/sass-bootstrap/js/tooltip.js"></script>
+        <script src="bower_components/sass-bootstrap/js/modal.js"></script>
+        <script src="bower_components/sass-bootstrap/js/transition.js"></script>
+        <script src="bower_components/sass-bootstrap/js/button.js"></script>
+        <script src="bower_components/sass-bootstrap/js/popover.js"></script>
+        <script src="bower_components/sass-bootstrap/js/carousel.js"></script>
+        <script src="bower_components/sass-bootstrap/js/scrollspy.js"></script>
+        <script src="bower_components/sass-bootstrap/js/collapse.js"></script>
+        <script src="bower_components/sass-bootstrap/js/tab.js"></script>
+        <!-- endbuild -->
+
+        <!-- build:js({app,.tmp}) scripts/main.js -->
+        <script src="scripts/main.js"></script>
+        <!-- endbuild -->
+    </body>
+
+
+</html>

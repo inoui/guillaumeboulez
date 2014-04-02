@@ -1,0 +1,208 @@
+{
+    "projects":[
+        {
+            "title": "ALI MAHDAVI",
+            "publication": "The WILD",
+            "thumb" : "WILD-0084.jpg",
+            "path" : "project_1",
+            "class" : "",
+            "bgcoul":"#9b4e96",
+            "data" : [
+                "WILD-0084.jpg",
+                "WILD-0176.jpg",
+                "WILD-0296.jpg",
+                "WILD-0329.jpg",
+                "WILD-0451.jpg",
+                "WILD-0543-2.jpg"
+            ]
+        },{
+            "title": "ALMA JODOROWSKY-CHANTELLE DOSSER",
+            "publication": "The WILD",
+            "path" : "project_2",
+            "thumb" : "AJ1.jpg",
+            "class" : "wide",
+            "bgcoul" : "#a691a4",
+            "data" : [
+                "AJ1.jpg",
+                "AJ2.jpg",
+                "AJ3.jpg",
+                "AJ4.jpg",
+                "AJ5.jpg",
+                "AJ6.jpg",
+                "AJ7.jpg"
+            ]
+        },{
+            "title": "GUILLAUME BOULEZ",
+            "publication": "Stylist",
+            "class" : "content-box"
+        },{
+            "title": "CODIE YOUNG - NICOLAS VALOIS",
+            "publication": "The WILD",
+            "path" : "project_3",
+            "thumb" : "NV92_010_035-03.jpg",
+            "class" : "",
+            "bgcoul" : "#c43433",
+            "data" : [
+                "NV92_010_035-03.jpg",
+                "NV92_020_052-03.jpg",
+                "NV92_030_181_2.jpg",
+                "NV92_040_077-04.jpg",
+                "NV92_050_053-04.jpg",
+                "NV92_060_050-02.jpg",
+                "NV92_070_021-03.jpg",
+                "NV92_080_099-05.jpg",
+                "NV92_090_155-03.jpg",
+                "NV92_100_045_1.jpg",
+                "NV92_110_033-03.jpg",
+                "NV92_120_116-03.jpg",
+                "NV92_120_199-03.jpg"
+            ]
+        },{
+            "title": "ESTHER - JEAN PACOME DEDIEU",
+            "publication": "Intersection",
+            "path" : "project_4",
+            "thumb" : "comp-visuel-1_V6.jpg",
+            "class" : "",
+            "bgcoul" : "#66e0e1",
+            "data" : [
+                "comp-visuel-1_V6.jpg",
+                "comp-visuel-2_V2.jpg",
+                "comp-visuel-03_V6.jpg",
+                "comp-visuel-4_V8.jpg",
+                "comp-visuel-5_V3.jpg",
+                "comp-visuel-6_V5-FULL.jpg",
+                "comp-visuel-6_V5.jpg"
+            ]
+        },{
+            "title": "LILI SUMNER - JAMES ANASTASI",
+            "publication": "The WILD",
+            "path" : "project_5",
+            "thumb" : "TheWild_1.jpg",
+            "class" : "",
+            "bgcoul" : "#846d73",
+            "data" : [
+                "TheWild_1.jpg",
+                "TheWild_2.jpg",
+                "TheWild_3.jpg",
+                "TheWild_4.jpg",
+                "TheWild_5.jpg",
+                "TheWild_6.jpg",
+                "TheWild_7.jpg",
+                "TheWild_8.jpg",
+                "TheWild_9.jpg"
+            ]
+        },{
+            "title": "M.I.A. - SAGA SIG",
+            "publication": "The WILD",
+            "path" : "project_6",
+            "thumb" : "MIA1.jpg",
+            "class" : "wide",
+            "bgcoul" : "#f4e51a",
+            "data" : [
+                "MIA1.jpg",
+                "MIA2.jpg",
+                "MIA3.jpg",
+                "MIA4.jpg",
+                "MIA5.jpg",
+                "MIA6.jpg"
+            ]
+
+        },{
+            "title": "MAGDA LAGUINGE & PAU BERTOLINI - ELLEN VON UNWERTH",
+            "publication": "The WILD",
+            "path" : "project_7",
+            "thumb" : "03-0991.jpg",
+            "class" : "wide",
+            "bgcoul" : "#47304a",
+            "data" : [
+                "03-0991.jpg",
+                "04-1336-copy.jpg",
+                "04-1336.jpg",
+                "05-1709.jpg",
+                "06-2158.jpg",
+                "07-2279.jpg",
+                "07-2562.jpg",
+                "08-2711.jpg",
+                "08-3112.jpg",
+                "11-3641.jpg",
+                "12-3931.jpg",
+                "13-4198.jpg",
+                "7871-23a.jpg",
+                "7877-31.jpg"
+            ]
+
+        },{
+            "title": "MYF SHEPHERD - CHANTELLE DOSSER",
+            "publication": "The WILD",
+            "path" : "project_8",
+            "thumb" : "01.jpg",
+            "class" : "",
+            "bgcoul" : "#000000",
+            "data" : [
+                "01.jpg",
+                "02.jpg",
+                "03.jpg",
+                "04a.jpg",
+                "04b.jpg",
+                "05a.jpg",
+                "05b.jpg",
+                "06.jpg",
+                "07.jpg",
+                "07a.jpg",
+                "07b.jpg",
+                "07c.jpg",
+                "08.jpg",
+                "09.jpg",
+                "10.jpg",
+                "11a.jpg",
+                "11b.jpg",
+                "11c.jpg",
+                "12.jpg",
+                "13.jpg",
+                "14.jpg"
+            ]
+        },{
+            "title": "CONTACT",
+            "publication": "Get in touch",
+            "class" : "content-box"
+
+
+        },{
+            "title": "SASHA GOLD - MARCO TOMMASI",
+            "publication": "L'Officiel Ukraine",
+            "path" : "project_9",
+            "thumb" : "9975-1-copie.jpg",
+            "class" : "",
+            "bgcoul" : "#9ea6b9",
+            "data" : [
+                "9975-1-copie.jpg",
+                "10117-copierectif.jpg",
+                "10211-copierectif.jpg",
+                "10278-3-copierectif.jpg",
+                "10337-copie-ok-copierectif.jpg",
+                "10434-copie2rectif.jpg",
+                "10434-copie2rectifb.jpg",
+                "10472-copierectif.jpg"
+            ]
+        },{
+            "title": "VIVIENNE WESTWOOD",
+            "publication": "The WILD",
+            "class" : "wide",
+            "path" : "project_10",
+            "thumb" : "000004-FINAL-copy.jpg",
+            "bgcoul" : "#e6d6b5",
+            "data" : [
+                "000004-FINAL-copy.jpg",
+                "000015-FINAL-copy.jpg",
+                "000045-copie-FINAL-copy.jpg",
+                "000056-FINAL-copy.jpg"
+            ]
+
+        },{
+            "title": "NETWORK",
+            "publication": "<ul class='list-inline social'><li><a href='http://facebook.com/ForgetMeNotCoco' target='_blank'><i class='fa fa-facebook'></i> &nbsp;</a></li><li><a href='http://twitter.com/ForgetMeNotCoco' target='_blank'><i class='fa fa-twitter'></i> &nbsp;</a></li><li><a href='http://pinterest.com/forgetmenotcoco' target='_blank'><i class='fa fa-pinterest'></i> &nbsp;</a></li><li><a href='http://forgetmenotcoco.tumblr.com/'><i class='fa fa-tumblr'></i> &nbsp;</a></li></ul>",
+            "class" : "content-box"
+        }
+
+    ]
+}
