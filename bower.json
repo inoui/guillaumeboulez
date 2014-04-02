@@ -1,0 +1,16 @@
+{
+  "name": "guillaumeboulez-com",
+  "private": true,
+  "dependencies": {
+    "modernizr": "~2.6.2",
+    "jquery": "~1.10.2",
+    "textillate": "*",
+    "underscore": "~1.6.0",
+    "packery": "~1.2.2",
+    "imagesloaded": "~3.1.4",
+    "swiper": "~2.5.5",
+    "sass-bootstrap": "~3.0.2",
+    "fontawesome-clean": "*"
+  },
+  "devDependencies": {}
+}

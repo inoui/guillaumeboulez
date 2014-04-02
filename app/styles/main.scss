@@ -1,0 +1,355 @@
+@import "compass/layout/stretching";
+@import "compass/utilities";
+@import "compass/css3";
+@import 'vars';
+@import 'fonts';
+
+.awesome {
+    width: 100%;
+    height: 100%;
+}
+
+html, body {
+    @extend .awesome;
+    background-color: #fff;
+    margin:0;
+    padding:0;
+            font-family: 'Lato', sans-serif;
+
+}
+
+
+body {
+    overflow: hidden;
+    @include transition(background-color 1s ease-out);
+}
+
+
+.home {
+    @extend .awesome;
+
+    ul {
+        @extend .awesome;
+
+        li {
+            opacity:0;
+            border: 5px solid #2d2d2d;
+            position: absolute;
+            @extend .awesome;
+            background: {
+                repeat: no-repeat;
+                position: center center;
+            };
+            @include background-size(cover);
+        }
+    }
+
+    .header-text {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        text-align: center;
+        display: block;
+        width: 100%;
+        height: 250px;
+        margin-top: -125px;
+        cursor: pointer;
+        z-index: 2;
+        h1 {
+            text-align:center;
+            visibility: hidden;
+            @include text-shadow(1px 1px 0px #000);
+            font-family: $font;
+            color: white;
+            text-align: center;
+            font-size:60px;
+        }
+        .sub-site-title {
+            text-transform: uppercase;
+            font-size: 20px;
+            color:#fff;
+            font-weight:400;
+            font-family: 'Lato', sans-serif;
+            @include text-shadow(1px 1px 0px #000);
+        }
+    }
+}
+
+.close {
+    @include filter(#{"blur(3px)"});
+    opacity: .4;
+}
+
+#listing {
+    @include transition-property(-webkit-filter opacity);
+    @include transition-duration(1s);
+    @include transition-timing-function(ease-out);
+    width: 100%;
+    margin:0 auto;
+
+    position:absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+
+    >ul {
+        
+        list-style:none;
+        padding:0;
+        height:800px;
+        >li {
+            opacity: 0;
+            color:#fff;
+            display: table;
+            width:19.9%;
+            height:420px;
+
+            background: {
+                repeat: no-repeat;
+                position: center center;
+            };
+
+            // @include filter(#{"grayscale(100%)"});
+            @include background-size(cover);
+
+            @include transition(-webkit-filter 1s ease-out);
+
+            div {
+                @include transition(opacity 1s ease-out);
+                opacity:0;
+                display: table-cell;
+                text-align:center;
+                vertical-align: middle;
+                h2 {
+                    padding:0 10px;
+                    font-family: $font;
+                    @include single-text-shadow;
+                }
+                h3 {
+                    font-size:15px;
+                    font-family: 'Lato', sans-serif;
+                }
+
+                .publication {
+                    text-align:center;
+                }
+            }
+            &:hover {
+                @include filter(#{"grayscale(0%)"});
+                div {
+                    opacity: 1;
+                }
+                cursor: pointer;
+            }
+        }
+        li.wide {
+            height:840px;
+        }
+        li.content-box {
+            color:#000;
+            background-color:#fff;
+            div {
+                h2 {
+                    @include single-text-shadow(none);
+                }
+                opacity:1;
+            }
+        }
+    }
+}
+.active #listing {
+
+    @include transform(translate(-80rem, 0));
+
+}
+
+
+#work {
+    z-index: 999;
+    position:absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: #FFF;
+    z-index: 2;
+    margin:0 auto;
+
+    @include transform(translate(100%, 0));
+    transition: 500ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
+
+
+    h1 {
+        padding-left:20px;
+        margin-top: 20px;
+        font-family: $font;
+        font-size:40px;
+    }
+
+    .credits {
+        padding:50px;
+        padding-top:0px;
+        width:500px;        
+                h2 {
+                    font-family: $font;
+                }
+                h3 {
+                    font-size:15px;
+                    font-family: 'Lato', sans-serif;
+                }
+        p {
+
+        }
+
+    }
+
+
+}
+.active #work {
+    @include transform(translate(0, 0));
+    transition: 500ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+
+
+
+/* ===============================================================
+Pagination Styles
+================================================================*/
+
+
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 4;
+    background: #000;
+    background: rgba(0, 0, 0, 0.2);
+    @include transition(opacity 500s $bezier, background 500s $bezier);
+
+    .loading_bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 0.3rem;
+        min-height: 3px;
+        background: #000;
+        @include transition(1000ms);
+    }
+
+}
+
+#nav {
+    position:absolute;
+    top:0;
+    right:0;
+    margin:20px;
+    ul {
+        padding:0;
+        margin:0;
+        list-style:none;
+        li {
+            float:left;
+            border-right: 1px solid #CCC;
+            padding:10px 20px;
+            a {
+                font-family: $font;
+                font-size:20px;
+                color:#000;
+            }
+        }
+        li:last-child {
+            border-right:none;
+        }
+    }
+}
+
+.list-inline {
+        padding:0;
+        margin:0;
+        list-style:none;
+        li {
+            float:left;
+            padding:10px 20px;
+            a {
+                font-family: $font;
+                font-size:10px;
+                color:#000;
+            }
+
+        }
+}
+
+
+
+
+.swiper-container {
+
+    margin:0 auto 100px auto;
+    position:relative;
+    overflow:hidden;
+    -webkit-backface-visibility:hidden;
+    -moz-backface-visibility:hidden;
+    -ms-backface-visibility:hidden;
+    -o-backface-visibility:hidden;
+    backface-visibility:hidden;
+    /* Fix of Webkit flickering */
+    z-index:1;
+}
+.swiper-wrapper {
+    position:relative;
+    width:100%;
+    -webkit-transition-property:-webkit-transform, left, top;
+    -webkit-transition-duration:0s;
+    -webkit-transform:translate3d(0px,0,0);
+    -webkit-transition-timing-function:ease;
+    
+    -moz-transition-property:-moz-transform, left, top;
+    -moz-transition-duration:0s;
+    -moz-transform:translate3d(0px,0,0);
+    -moz-transition-timing-function:ease;
+    
+    -o-transition-property:-o-transform, left, top;
+    -o-transition-duration:0s;
+    -o-transform:translate3d(0px,0,0);
+    -o-transition-timing-function:ease;
+    -o-transform:translate(0px,0px);
+    
+    -ms-transition-property:-ms-transform, left, top;
+    -ms-transition-duration:0s;
+    -ms-transform:translate3d(0px,0,0);
+    -ms-transition-timing-function:ease;
+    
+    transition-property:transform, left, top;
+    transition-duration:0s;
+    transform:translate3d(0px,0,0);
+    transition-timing-function:ease;
+}
+.swiper-free-mode > .swiper-wrapper {
+    -webkit-transition-timing-function: ease-out;
+    -moz-transition-timing-function: ease-out;
+    -ms-transition-timing-function: ease-out;
+    -o-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+    margin: 0 auto;
+}
+.swiper-slide {
+    float: left;
+    margin-right:50px;
+}
+
+/* IE10 Windows Phone 8 Fixes */
+.swiper-wp8-horizontal {
+    -ms-touch-action: pan-y;
+}
+.swiper-wp8-vertical {
+    -ms-touch-action: pan-x;
+}
+

@@ -1,0 +1,123 @@
+<!DOCTYPE html><html lang="
+fr">
+<head>
+	<meta charset="UTF-8"><title>Découvrez les Regards d'artistes sur Marseille-Provence 2013 - Snapshots of Provence 2013</title><link href="/snapshots2013/min/?f=/css/reset.css,/css/common.css,/css/front.css" media="all" rel="stylesheet" type="text/css" >
+	<link rel="shortcut icon" href="/snapshots2013/favicon.ico" />
+
+	<meta name="HandheldFriendly" content="true">
+	<meta name="MobileOptimized" content="320">
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
+	
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	<meta name="description"        content="Bouches-du-Rhône Tourisme présente ses regards d’artistes sur la Provence, Marseille et la Camargue durant Marseille-Provence, capitale européenne de la culture en 2013. Découvrez les Bouches-du-Rhône à travers les photographies et illustrations de Metzger, Messina, Lacombe, Pacaud, Paillé…" />
+	<meta property="og:site_name"   content="Snapshots of Provence 2013" />
+	<meta property="og:type" 	    content="website" />
+	<meta property="og:title"       content="Regards de Provence - Découvrez les Regards d'artistes sur Marseille-Provence 2013" />
+	<meta property="og:description" content="Bouches-du-Rhône Tourisme présente ses regards d’artistes sur la Provence, Marseille et la Camargue durant Marseille-Provence, capitale européenne de la culture en 2013. Découvrez les Bouches-du-Rhône à travers les photographies et illustrations de Metzger, Messina, Lacombe, Pacaud, Paillé…" />
+	<meta property="og:url"         content="http://www.myprovence.fr/snapshots2013/snapshots2013/fonts/mostraonelight-webfont.eot" />
+	<meta property="og:image"       content="http://www.myprovence.fr/snapshots2013/snapshots2013/fonts/mostraonelight-webfont.eot" />
+	<!--[if lt IE 9]>
+		<script src="/snapshots2013/js/libs/html5shiv.js"></script>
+	<![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="/snapshots2013/js/libs/jquery-1.9.1.min.js">\x3C/script>')</script>
+	<script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=&amp;sensor=false"></script>
+	<script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
+	<script type="text/javascript" src="/snapshots2013/js/libs/richmarker.min.js"></script>
+	<script type="text/javascript" src="/snapshots2013/js/libs/raphael-2.1.0.js"></script>
+	
+</head>
+<body class="error" data-lang="fr" data-device="desktop">
+	
+		<a class="back ajax" href="/snapshots2013/carte">
+		<span class="back-inside">
+			<span class="strip"><i></i></span>
+			<span class="text">Retour à la carte</span>
+		</span>
+	</a>
+
+<nav class="main-navigation">
+	<div class="background"></div>
+	<ul>
+		<li class="first"><a class="timeline ajax inactive" href="/snapshots2013/oeuvres">Jour après jour <i></i></a></li>
+		<li><a class="map ajax inactive" href="/snapshots2013/carte">Carte <i></i></a></li>
+		<li><a class="grid ajax inactive" href="/snapshots2013/grille">Grille <i></i></a></li>
+		<li><a class="infos ajax inactive" href="/snapshots2013/a-propos">À propos <i></i></a></li>
+		<li><a class="social ajax inactive" href="/snapshots2013/suivez-nous">Suivez-nous <i></i></a></li>
+		<li><a class="archives ajax inactive" href="/snapshots2013/editions-precedentes">Éditions précédentes <i></i></a></li>
+		<li class="last"><a class="help ajax inactive" href="/snapshots2013/aide">Aide <i></i></a></li>
+	</ul>
+	<div class="close-container">
+		<a class="close"></a>
+	</div>
+	<div class="bottom">
+		
+	</div>
+	<div class="hidden-part">
+		<div class="handler"></div>
+	</div>
+	<div class="langs">
+				<a data-lang="fr" id="lang_fr" class="active" href="">FR</a> / <a data-lang="en" class="" href="">EN</a> 
+	</div>
+	<div class="links-container">
+		<div class="links">
+			<a target="_blank" class="item bouches-du-rhone" href="http://www.visitprovence.com/"><img class="retina" src="/snapshots2013/img/main-nav-logo-BDR.png" alt="Logo Bouches du Rhone" width="47" height="50" /></a>
+			<a target="_blank" class="item mp2013" href="http://www.mp2013.fr/"><img class="retina" src="/snapshots2013/img/main-nav-logo-MP2013.png" alt="Logo MyProvence 2013" width="47" height="50" /></a>
+			<a target="_blank" class="item uzik" href="http://www.uzik.com/"><img class="retina" src="/snapshots2013/img/main-nav-logo-uzik.png" alt="Logo Uzik" width="47" height="50" /></a>
+		</div>
+	</div>
+</nav>	<div class="transition-bloc">
+		<span class="num">2</span><span class="slash">/</span><span class="total"></span>
+	</div>
+	<section id="page" class="">
+		<article id="main">
+				<div class="content border-dotted">
+		<span class="corner corner-1"></span>
+		<span class="corner corner-2"></span>
+		<span class="corner corner-3"></span>
+		<span class="corner corner-4"></span>
+		<img class="illu-404 retina" src="/snapshots2013/img/illu-404.png" alt="Horizontal" width="456" height="190" />
+	</div>
+
+	<p class="title">– Erreur 404 –</p>
+	<p class="description">La page que vous recherchez n'existe pas …</p>
+	<a class="link-home" href="/snapshots2013/">Retour a l'accueil</a>
+		</article>
+	</section>
+
+	<script type="text/javascript" src="/snapshots2013/min/?f=/js/script.js,/js/libs/jquery.touchSwipe.min.js,/js/libs/jquery-rotate.min-2.2.js,/js/libs/modernizr.js,/js/libs/pinmarklet.js,/js/libs/jquery-easing.js,/js/infos.js,/js/social.js,/js/archives.js,/js/map.js,/js/grid.js,/js/timeline.js,/js/prehome.js,/js/menu.js,/js/hashtory.js"></script><!-- Stats -->
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-12352171-16', 'myprovence.fr');
+</script>
+
+	<script>
+		var site,
+			translations;
+		$(document).ready(function(){
+		    site = new Site();
+		    site.init({
+		    	device     : 'desktop',
+				ga         : false,
+				env        : 'prod',
+				base_url   : '/snapshots2013',
+				page       : 'error',
+				anchor     : '',
+				menu_state : 'hidden' //hidden | full_hidden | shown
+		    });
+
+			translations              = {};
+			translations.back_to_map  = "Retour à la carte";
+			translations.back_to_grid = "Retour à la grille";
+			translations.access_work  = "Accéder à l'oeuvre";
+			translations.by           = "par";
+		});
+	</script>
+</body>
+</html>
