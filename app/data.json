@@ -7,6 +7,7 @@
             "path" : "project_1",
             "class" : "",
             "bgcoul":"#9b4e96",
+            "credits":"<strong>Photography</strong> by Ali Mahdavi<br/><strong>Art Direction</strong> by Frederic Fontan<br/><strong>Hair stylist:</strong> Vincent de Moro<br/><strong>Make Up artist:</strong> Annabelle Petit <br/><strong>Manicurist:</strong> Sophie A. <br/><strong>Models:</strong> Tetyana Brazhnyk, Gwen Loos, Gael Pendola and Oisin Monaghan<br/>",
             "data" : [
                 "WILD-0084.jpg",
                 "WILD-0176.jpg",
@@ -22,6 +23,7 @@
             "thumb" : "AJ1.jpg",
             "class" : "wide",
             "bgcoul" : "#a691a4",
+            "credits":"<strong>Photography</strong> by Chantelle Dosser<br/><strong>Hair stylist:</strong> Vinz  <br/><strong>Make Up artist:</strong> Sandrine Cano <br/><strong>Manicurist:</strong> Sandrine Lanaud<br/><strong>Models:</strong> Myf Shepherd and Kameron",
             "data" : [
                 "AJ1.jpg",
                 "AJ2.jpg",
@@ -32,15 +34,12 @@
                 "AJ7.jpg"
             ]
         },{
-            "title": "GUILLAUME BOULEZ",
-            "publication": "Stylist",
-            "class" : "content-box"
-        },{
             "title": "CODIE YOUNG - NICOLAS VALOIS",
             "publication": "The WILD",
             "path" : "project_3",
             "thumb" : "NV92_010_035-03.jpg",
             "class" : "",
+            "credits" : "<strong>Photography</strong> by Nicolas Valois <br/><strong>Hair stylist:</strong> Roberto Pagnini <br/><strong>Make Up artist:</strong> Topolino <br/><strong>Manucurist:</strong> Tatiana <br/><strong>Model:</strong> Codie Young",
             "bgcoul" : "#c43433",
             "data" : [
                 "NV92_010_035-03.jpg",
@@ -79,6 +78,7 @@
             "path" : "project_5",
             "thumb" : "TheWild_1.jpg",
             "class" : "",
+            "credits" : "<strong>Photography</strong> by James Anastasi<br/><strong>Hair stylist:</strong> David Wadlow<br/><strong>Make Up artist:</strong> Veronica Martinez<br/><strong>Model:</strong> Lili Sumner",
             "bgcoul" : "#846d73",
             "data" : [
                 "TheWild_1.jpg",
@@ -98,6 +98,7 @@
             "thumb" : "MIA1.jpg",
             "class" : "wide",
             "bgcoul" : "#f4e51a",
+            "credits":"<strong>Photographer:</strong> Saga Sig<br/><strong>Stylist:</strong> Guillaume Boulez<br/><strong>Hair stylist:</strong> Lok Lau @ CLM<br/><strong>Make Up artist:</strong> Celia Burton @ CLM<br/><strong>Manicurist:</strong> Jessica Hoffman @ Caren using Sally Hansen<br/><strong>Set Designer:</strong> Thomas Petherick<br/><strong>Stylist’s assistants:</strong> Remi Meunier and Margaux Rebois<br/><strong>Hair stylist’s assistant:</strong> Liv Holst<br/><strong>Talent:</strong> M.I.A.",
             "data" : [
                 "MIA1.jpg",
                 "MIA2.jpg",
@@ -114,6 +115,7 @@
             "thumb" : "03-0991.jpg",
             "class" : "wide",
             "bgcoul" : "#47304a",
+            "credits" : "<strong>Photography</strong> by Ellen Von Unwerth<br/><strong>Styling</strong> by Guillaume Boulez<br/><strong>Hair stylist:</strong> Tie Toyama @ Calliste<br/><strong>Make Up artist:</strong> Morgane Martini @ ARTLIST<br/><strong>Digital operator:</strong> Jerome Vivet<br/><strong>Producer:</strong> Anne-Marei Heinrich<br/><strong>Models:</strong> Magda Laguinge @ NEXT Models and Pau Bertolini @ OUI Management<br/><strong>Photographer’s assistants:</strong> Stan Rey-Grange, Joe Molines and Margaux Jouanneau<br/><strong>Stylist’s assistants:</strong> Remi Meunier and Linda Kaelin<br/><strong>Hair stylist’s assistant:</strong> Tomoko Sato<br/><strong>Make Up artist’s assistant:</strong> Hiroyo Iwaki<br/>Special thank you to Laperouse PARIS.",
             "data" : [
                 "03-0991.jpg",
                 "04-1336-copy.jpg",
@@ -138,6 +140,7 @@
             "thumb" : "01.jpg",
             "class" : "",
             "bgcoul" : "#000000",
+            "credits" : "<strong>Photography</strong> by Chantelle Dosser<br/><strong>Hair stylist and Make Up artist:</strong> Gilles Degivry<br/><strong>Talent:</strong> Alma Jodorowsky",
             "data" : [
                 "01.jpg",
                 "02.jpg",
@@ -162,18 +165,13 @@
                 "14.jpg"
             ]
         },{
-            "title": "CONTACT",
-            "publication": "Get in touch",
-            "class" : "content-box"
-
-
-        },{
             "title": "SASHA GOLD - MARCO TOMMASI",
             "publication": "L'Officiel Ukraine",
             "path" : "project_9",
             "thumb" : "9975-1-copie.jpg",
             "class" : "",
             "bgcoul" : "#9ea6b9",
+            "credits": "<strong>Photography</strong> by Marco Tomassi<br/><strong>Hair stylist:</strong> Jean-Baptiste Santens  <br/><strong>Make Up artist:</strong> Olivier Baille<br/><strong>Model:</strong> Dasha Gold",
             "data" : [
                 "9975-1-copie.jpg",
                 "10117-copierectif.jpg",
@@ -199,10 +197,86 @@
             ]
 
         },{
+            "title": "PHILLIP RICHES",
+            "publication": "MOJEH",
+            "class" : "wide",
+            "path" : "project_11",
+            "thumb" : "Test_Mojeh_3078.jpg",
+            "bgcoul" : "#e6d6b5",
+            "credits" : "<strong>Photography</strong> by Phillip Riches<br/><strong>Hair stylist :</strong> Vincent De Moro <br/><strong>Make Up artist :</strong> Olivier Baille<br/><strong>Manicurist :</strong> Sarah Atallah <br/><strong>Models :</strong> Yulia Terentieva and Marie Meyer",
+            "data" : [
+                "Test_Mojeh_2060-1.jpg",
+                "Test_Mojeh_3078.jpg",
+                "Test_Mojeh_4082.jpg",
+                "Test_Mojeh_5183.jpg",
+                "Test_Mojeh_6215.jpg"
+            ]
+
+        },{
+            "title": "ELLEN VON UNWERTH",
+            "publication": "MOJEH",
+            "class" : "wide",
+            "path" : "project_12",
+            "thumb" : "07-2650.jpg",
+            "bgcoul" : "#e6d6b5",
+            "credits" : "<strong>Photography</strong> by Ellen von Unwerth<br/><strong>Hair stylist:</strong> Vinz<br/><strong>Make Up artist:</strong> Regine Bedot <br/><strong>Manicurist:</strong> Sophie A.<br/><strong>Models:</strong> Eva Doll, Charlotte Di Calypso, Tarik Lakehal, Alain Gossuin and Andy Gilet",
+            "data" : [
+                "01-0140.jpg",
+                "02-0496.jpg",
+                "03-0731.jpg",
+                "04-1177.jpg",
+                "05-1630.jpg",
+                "06-1768.jpg",
+                "07-2419.jpg",
+                "07-2650.jpg",
+                "09-3337.jpg",
+                "10-3913.jpg",
+                "11-4310.jpg",
+                "12-4716.jpg",
+                "13-4976.jpg",
+                "14-5113.jpg",
+                "15-5544.jpg",
+                "16-5744.jpg"
+            ]
+        },{
+            "title": "THANASIS KRIKIS",
+            "publication": "HARPER’S BAZAAR BRAZIL",
+            "class" : "wide",
+            "path" : "project_13",
+            "thumb" : "BZ30_FEATURE_FARIDA03.jpg",
+            "bgcoul" : "#e6d6b5",
+            "credits" : "<strong>Photography</strong> by Thanassis Krikis<br/><strong>Hair stylist:</strong> Bruno Weppe<br/><strong>Make Up artist:</strong> Thierry Mauduit<br/><strong>Talent:</strong> Farida Khelfa",
+            "data" : [
+                "BZ30_FEATURE_FARIDA01.jpg",
+                "BZ30_FEATURE_FARIDA02.jpg",
+                "BZ30_FEATURE_FARIDA03.jpg",
+                "BZ30_FEATURE_FARIDA04.jpg",
+                "BZ30_FEATURE_FARIDA05.jpg",
+                "BZ30_FEATURE_FARIDA06.jpg",
+                "BZ30_FEATURE_FARIDA07.jpg",
+                "BZ30_FEATURE_FARIDA08.jpg"
+            ]
+        },{
             "title": "NETWORK",
             "publication": "<ul class='list-inline social'><li><a href='http://facebook.com/ForgetMeNotCoco' target='_blank'><i class='fa fa-facebook'></i> &nbsp;</a></li><li><a href='http://twitter.com/ForgetMeNotCoco' target='_blank'><i class='fa fa-twitter'></i> &nbsp;</a></li><li><a href='http://pinterest.com/forgetmenotcoco' target='_blank'><i class='fa fa-pinterest'></i> &nbsp;</a></li><li><a href='http://forgetmenotcoco.tumblr.com/'><i class='fa fa-tumblr'></i> &nbsp;</a></li></ul>",
+            "class" : "content-box social"
+        },{
+            "title": "GUILLAUME BOULEZ",
+            "part":"about",
+            "publication": "About",
+            "credits" : "Stylist Guillaume Boulez was born in Vichy, France and moved to Paris at age 18 to study at the famed Studio Bercot fashion academy. He relocated to New York from 2004 to 2013 and quickly made his mark with downtowndesign collective threeASFOUR and later joined the design team of Zac Posen. Currently, Guillaume divides his time between styling and consulting for various fashion collections between Europe and the US. He is also creative director of The Wild.<h2>CLIENT LISTS </h2><strong>Editorials:</strong> Vogue UK, Vogue.it, Porter Magazine, Elle Magazine, Harper’s Bazaar Brazil, Harper's Bazaar en Espanol, WWD, Arena Homme +, L’Officiel Ukraine, Marie Claire China, Tatler UK, Candy Magazine, Oyster, Vs Magazine, Vs Live, Mojeh, The WILD, Supernasty, Grazia, Ocean Drive, Avenue, Zink, Style Monte Carlo, NY Moves, Line A Journal, LA Direct.</p><strong>Clients:</strong> Diane Von Furstenberg, Juicy Couture, Jessica Simpson, Grazia, Heineken, Euro RSCG Worldwide, Camuto Group, Vince, Erin Fetherston, threeASFOUR, Pologeorgis, The Guggenheim Museum, Gemma Kahng, Kacey Karp, Clare & The Reasons, Melania Trump, Vicky Ward, Jonah Bokaer, Salvatore Larussa Dance Theater.<strong>Shows:</strong> threeASFOUR, Erin by Erin Fetherston, Erin Fetherston, Dean Quinn, BLAND.",
+            "class" : "content-box",
+            "path" : "about",
+            "data" : [
+                "about.jpg",
+                "about.jpg"
+            ]
+
+        },{
+            "title": "CONTACT",
+            "part":"contact",
+            "publication": "Me",
             "class" : "content-box"
         }
-
     ]
 }
