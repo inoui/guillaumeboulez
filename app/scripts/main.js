@@ -13,8 +13,6 @@
         $('body').on('click', '.nav-next', $.proxy(this.swipeNext, this));
         $('body').on('click', '.nav-prev', $.proxy(this.swipePrev, this));
         $('body').on('click', '.nav-close', $.proxy(this.closeProject, this));
-
-
         return this;
     }
 
@@ -52,33 +50,42 @@
 
     gb.prototype.setList = function() {
         var html = $("#workListTpl").html();
-
-
         $('#listing').append(_.template(html, {projects:this._randomize(this._images.projects)}));
 
-        var $container = $('#listing ul');
+        $('#listing>ul>li').each(function(index, el) {
+           // $(this).css('width', Math.floor(Math.random() * 200)+300);
+           if (!$(this).hasClass('content-box')) {
+                $(this).css('height', Math.floor(Math.random() * 400)+300);
+           } else {
+                // $(this).css('height', $(this).width());
+           }
+           // $(this).css('margin', Math.floor(Math.random() * 50) - 25);
+           $(this).css('margin', '2%');
+        });
+
+        var $container = $('#listing>ul');
         $container.packery({
-          itemSelector: 'li',
+          itemSelector: 'li.pack',
           gutter:2
           // isHorizontal:true
         });
 
-        $('#listing ul').imagesLoaded( function() {
+        $('#listing>ul').imagesLoaded( function() {
             var i = 0;
-            $('#listing ul li').each(function(index, el) {
+            $('#listing>ul>li').each(function(index, el) {
                 $(this).delay(200*i++).animate({opacity: 1}, 1000);
             });
         });
 
-        $('#listing ul li').on('click', $.proxy(this.openProject, this));
+        $('#listing>ul>li').on('click', $.proxy(this.openProject, this));
 
         return this;
     }
     gb.prototype.openProject = function(evt) {
-        this._startLoading();
-
-
         var $this = $(evt.currentTarget);
+    
+        this._startLoading();
+        
         $('<div/>', {'id':'work'}).appendTo('body');
         var w = $this.index();
         var html = $("#workTpl").html();
@@ -89,12 +96,22 @@
         );
 
 
-        $('.swiper-container').height($(window).height()-200);
+        $('.swiper-container').height($(window).height()-150);
         $('.swiper-container img')
             .imagesLoaded($.proxy(this.stopLoading, this))
             .progress($.proxy(this._loading, this))
 
     }
+    
+    gb.prototype.showPart = function(elt) {
+        if (elt.data("part")) {
+            $("#"+elt.data("part")).addClass("active");
+            $('.close').one('click', function() {
+                $('.active').removeClass('active');
+            });
+        }
+    }
+
     gb.prototype.stopLoading = function() {
         var that = this;
         $('.swiper-container img').css({'opacity':0});
@@ -105,29 +122,32 @@
 
 
     gb.prototype.onWorkLoaded = function() {
-        
+
         this._stopLoading();
         $('body').addClass('active');
 
         this._swiper = $('.swiper-container').swiper({
-            slidesPerView: 'auto'
+            slidesPerView: 'auto',
+            updateOnImagesReady:true
             // mode:'horizontal',
             // slidesPerSlide: 'auto'
         });
         var i = 2;
+        var that = this;
         $('.swiper-container img').each(function(index, el) {
-           $(this).delay(i*500).animate({'opacity':1}); 
+           $(this).delay(i*500).animate({'opacity':1});
            i++;
+            that._swiper.reInit();
         });
 
     }
 
     gb.prototype.closeProject = function(evt) {
-        $('body').removeClass('active');
+        $('.active').removeClass('active');
         setTimeout(function() {
             $('#work').remove();
             this._swiper = null;
-        }, 1000);   
+        }, 1000);
     }
 
     gb.prototype.swipeNext = function(evt) {
@@ -202,7 +222,7 @@
 //             delayScale: 1.5
 //         }
 //     });
-//     
+//
 //     // $('.home-slider li').each(function() {
 //     //     $(this).find('span').css("background-image", $(this).data('src'));
 //     //     console.log($(this).data('src'))
