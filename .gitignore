@@ -3,5 +3,4 @@ dist
 .tmp
 .sass-cache
 app/bower_components
-app/media
 test/bower_components
