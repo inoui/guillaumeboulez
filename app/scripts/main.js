@@ -8,19 +8,50 @@
     var gb = GuillaumeBoulez;
 
     gb.prototype.init = function() {
-        $.getJSON( "data.json", $.proxy(this.setHome, this));
-        $('#home').on('click', $.proxy(this.initList, this));
-        $('body').on('click', '.nav-next', $.proxy(this.swipeNext, this));
-        $('body').on('click', '.nav-prev', $.proxy(this.swipePrev, this));
-        $('body').on('click', '.nav-close', $.proxy(this.closeProject, this));
-
-
+        this.document_title = "Guillaume Boulez, Fashion Stylist & Creative Director";
+        this._isInit = false;
+        $('body').on('click', "a[target!='_blank']", $.proxy(this._history, this));
+        $(document).on('submit', "form", $.proxy(this.submitForm, this));
+        
+        $.getJSON( "data.json", $.proxy(this.onReady, this));
+        $(window).resize(_.debounce($.proxy(this.resizeList, this), 500));
         return this;
     }
 
-    gb.prototype.setHome = function(data) {
+    gb.prototype.submitForm = function(evt) {
+        evt && evt.preventDefault();
+        $("#frmContact").html('<h3>Thank you, you will soon received an answer.</h3>');
 
+    }
+
+    gb.prototype._history = function(evt) {
+        evt && evt.preventDefault();
+        var $a = $(evt.currentTarget);
+        if ($a.attr('target') == '_blank') {
+            return true;
+        }
+        history.pushState({}, '', $(evt.currentTarget).attr("href"));
+        document.title = this.document_title + ' | ' + $(evt.currentTarget).attr("title");
+        if ($a.data('action')) this[$a.data('action')](evt);
+    }
+
+    gb.prototype.onReady = function(data) {
+
+
+        var pathname = window.location.pathname;
         this._images = data;
+        this.pathname = null;
+        if (pathname != '/') {
+            this.pathname = pathname;
+            this._stopLoading();
+            $(".home").hide();
+            this.setList();
+            if (pathname != '/works' && pathname != '/works/' ) {
+                $("#listing").hide();
+                $('a[href="'+pathname+'"]').trigger('click');
+            }
+            return;
+        }
 
         $('.tlt').textillate({
             // initialDelay: 2000,
@@ -31,18 +62,24 @@
             }
         });
 
+        $('.sub-site-title').textillate({
+            initialDelay: 2000,
+            in: {
+                effect: 'fadeIn',
+                delay: 50,
+                delayScale: 1.5
+            }
+        });
         this.animateHome();
         this._stopLoading();
     }
 
     gb.prototype.animateHome = function() {
-
         $(".home-slider li:eq("+this._curr+")").animate({opacity: 1}, 2000);
         $(".home-slider li:eq("+(this._curr-1)+")").animate({opacity: 0}, 2000);
         this._curr++;
         if (this._curr == $(".home-slider li").size()) this._curr = 0;
         this.hometm = setTimeout($.proxy(this.animateHome, this), 6000);
-
     }
 
     gb.prototype.initList = function() {
@@ -51,50 +88,102 @@
     }
 
     gb.prototype.setList = function() {
-        var html = $("#workListTpl").html();
 
-
+        var html = gb.templates.workListTpl;
         $('#listing').append(_.template(html, {projects:this._randomize(this._images.projects)}));
+        this.resizeList();
 
-        var $container = $('#listing ul');
+        var $container = $('#listing>ul');
         $container.packery({
-          itemSelector: 'li',
-          gutter:2
+          itemSelector: 'li.pack',
+          autoResize:false
+          // gutter:2
           // isHorizontal:true
-        });
-
-        $('#listing ul').imagesLoaded( function() {
+        }).packery('unbindResize');
+        this._isInit = true;
+        var that = this;
+        $('#listing>ul').imagesLoaded( function() {
             var i = 0;
-            $('#listing ul li').each(function(index, el) {
+            $('#listing>ul>li').each(function(index, el) {
                 $(this).delay(200*i++).animate({opacity: 1}, 1000);
             });
         });
-
-        $('#listing ul li').on('click', $.proxy(this.openProject, this));
-
+        // $('#listing>ul>li').on('click', function(evt) {
+        //     evt && evt.stopPropagation() && evt.preventDefault();
+        // });
         return this;
     }
+
+    gb.prototype.resizeList = function(evt) {
+        
+        var nbCol, gutter, itemWidth;
+        var w = $(window).width();
+
+        if (w < 640) {
+            nbCol = 1;
+            gutter = 20;
+            itemWidth = w-40;
+        
+        } else if (w < 960) {
+            nbCol = 2;
+            gutter = Math.floor((w*20/100)/3);
+            itemWidth = Math.floor(w*40/100);
+        } else if (w < 1200) {
+            nbCol = 3;
+            gutter = Math.floor((w*10/100)/4);
+            itemWidth = Math.floor(w*30/100);
+
+        } else {
+            nbCol = 4;
+            itemWidth = Math.floor(w*20/100);
+            gutter = Math.floor(itemWidth / 5);
+        }
+        $('#listing>ul>li').css({
+            width:itemWidth,
+            "margin-left":gutter,
+            "margin-top":gutter
+        })
+
+
+        $('#listing>ul>li').each(function(index, el) {
+           if (!$(this).hasClass('content-box')) {
+                var h = Math.floor(Math.random() *itemWidth)+itemWidth;
+                $(this).css('height', h);
+           } 
+        });
+        if (this._isInit) $('#listing>ul').packery('resize');
+
+
+
+    }
+
     gb.prototype.openProject = function(evt) {
+        var $this = $(evt.currentTarget).closest('li');
         this._startLoading();
-
-
-        var $this = $(evt.currentTarget);
+        
         $('<div/>', {'id':'work'}).appendTo('body');
         var w = $this.index();
-        var html = $("#workTpl").html();
+        var html = gb.templates.workTpl;
 
         this._tn = 0;
         $('#work').append(
             _.template(html, {project:this._images.projects[w]} )
         );
-
-
-        $('.swiper-container').height($(window).height()-200);
+        $('.swiper-container').height($(window).height()-150);
         $('.swiper-container img')
             .imagesLoaded($.proxy(this.stopLoading, this))
-            .progress($.proxy(this._loading, this))
-
+            .progress($.proxy(this._loading, this));
     }
+    
+    gb.prototype.showPart = function(elt) {
+        if (elt.data("part")) {
+            $("#"+elt.data("part")).addClass("active");
+            $('.close').one('click', function() {
+                $('.active').removeClass('active');
+            });
+        }
+    }
+
     gb.prototype.stopLoading = function() {
         var that = this;
         $('.swiper-container img').css({'opacity':0});
@@ -105,29 +194,37 @@
 
 
     gb.prototype.onWorkLoaded = function() {
-        
+
         this._stopLoading();
         $('body').addClass('active');
 
-        this._swiper = $('.swiper-container').swiper({
-            slidesPerView: 'auto'
-            // mode:'horizontal',
-            // slidesPerSlide: 'auto'
-        });
+        var opt = {
+            mode:'horizontal',
+        }
+
+        if (!this._isMobile()) opt.slidesPerView = 'auto';
+
+        this._swiper = $('.swiper-container').swiper(opt);
         var i = 2;
+        var that = this;
         $('.swiper-container img').each(function(index, el) {
-           $(this).delay(i*500).animate({'opacity':1}); 
+           $(this).delay(i*500).animate({'opacity':1});
            i++;
         });
+
+        $('.vimeo-thumb').smartVimeoEmbed({
+            autoplay:true
+        }).trigger('click');
 
     }
 
     gb.prototype.closeProject = function(evt) {
-        $('body').removeClass('active');
+        $("#listing").show();
+        $('.active').removeClass('active');
         setTimeout(function() {
             $('#work').remove();
             this._swiper = null;
-        }, 1000);   
+        }, 1000);
     }
 
     gb.prototype.swipeNext = function(evt) {
@@ -154,11 +251,12 @@
 
     gb.prototype._startLoading = function() {
         $("#loading")
+            .addClass("active")
             .css("height", "100%");
-
     }
 
     gb.prototype._stopLoading = function() {
+
         $("#loading")
             .css("height", 0)
             .find(".loading_bar")
@@ -173,11 +271,15 @@
         $img.height($('.swiper-container').height());
         var w = $(image.img).height()*image.img.width/image.img.height;
         $img.width(w);
-        $img.closest('.swiper-slide').css({'width':w+'px'});
+        $img.closest('.swiper-slide').css({'width':w+20});
 
         $("#loading")
             .find(".loading_bar")
             .css("width", n+'%');
+    }
+
+    gb.prototype._isMobile = function() {
+        return (screen.width <= 1024);
     }
 
     $(window).on('load', function () {
@@ -185,28 +287,65 @@
     });
 
 
-
+gb.templates = {
+    workListTpl:' \
+        <ul> \
+            <% _.each(projects, function(project) { %> \
+                <% if (project.thumb) { %> \
+                    <% if (project.class=="video") { %> \
+                        <li  data-bgcoul="<%= project.bgcoul %>"  data-part="<%= project.part %>"  style="background-image:url(<%= project.thumb %>)" class="<%= project.class %> pack"> \
+                    <% } else { %> \
+                        <li  data-bgcoul="<%= project.bgcoul %>"  data-part="<%= project.part %>"  style="background-image:url(/media/<%= project.path %>/<%= project.thumb %>)" class="<%= project.class %> pack"> \
+                    <% } %> \
+                <% } else { %> \
+                    <li  data-bgcoul="<%= project.bgcoul %>"  data-part="<%= project.part %>"  class="<%= project.class %> pack"> \
+                <% } %> \
+                        <div class="<%= project.class %>"> \
+                            <a href="<%= project.uri %>" data-action="openProject" title="<%= project.title %> - <%= project.publication %>" class="goto"> \
+                                <h2><%= project.title %></h2> \
+                                <h3><%= project.publication %></h3> \
+                            </a> \
+                        </div> \
+                    </a> \
+                </li> \
+            <%});%> \
+        </ul> \
+',workTpl: ' \
+        <h1><%= project.publication %></h1> \
+        <div class="tools"> \
+            <ul> \
+                <li><a href="/works" class="nav-close" data-action="closeProject" title="Works">x</a></li> \
+                <li><a href="#" class="nav-prev" data-action="swipePrev" title="">&#8592;</a></li> \
+                <li><a href="#" class="nav-next" data-action="swipeNext" title="">&#8594;</a></li> \
+            </ul> \
+        </div> \
+        <div class="swiper-container"> \
+          <div class="swiper-wrapper"> \
+              <div class="swiper-slide credits hidden-mobile hidden-tablet"> \
+                <div class="sw-content"> \
+                    <h2><%= project.title %></h2> \
+                    <p><%= project.credits %></p> \
+                </div> \
+              </div> \
+            <% if (project.video) { %> \
+              <div class="swiper-slide video"> \
+                <div class="sw-content"> \
+                    <img src="http://placehold.it/640x360" class="vimeo-thumb" data-vimeo-id="<%= project.video %>" /> \
+                </div> \
+              </div> \
+            <% } %> \
+            <% _.each(project.data, function(slide) { %> \
+              <div class="swiper-slide"> \
+                <div class="sw-content"> \
+                    <img src="/media/<%= project.path %>/<%= slide %>" alt=""> \
+                </div> \
+              </div> \
+            <%});%> \
+          </div> \
+        </div> \
+'
+};
 
 
 })(jQuery, window);
 
-
-
-// $(function () {
-//     $('.home').hide().fadeIn(2000).removeClass('hidden');
-//     $('.tlt').textillate({
-//         initialDelay: 2000,
-//         in: {
-//             effect: 'fadeIn',
-//             delay: 50,
-//             delayScale: 1.5
-//         }
-//     });
-//     
-//     // $('.home-slider li').each(function() {
-//     //     $(this).find('span').css("background-image", $(this).data('src'));
-//     //     console.log($(this).data('src'))
-//     //     alert('asd')
-//     // });
-
-// });

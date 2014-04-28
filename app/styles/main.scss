@@ -10,12 +10,12 @@
 }
 
 html, body {
+    overflow: hidden;
     @extend .awesome;
     background-color: #fff;
     margin:0;
     padding:0;
-            font-family: 'Lato', sans-serif;
-
+    font-family: 'Lato', sans-serif;
 }
 
 
@@ -23,8 +23,14 @@ body {
     overflow: hidden;
     @include transition(background-color 1s ease-out);
 }
-
-
+a {
+    @include transition(opacity .3s ease-out);
+    color:#b9004b;
+}
+a:hover {
+    text-decoration:none;
+    opacity:.3;
+}
 .home {
     @extend .awesome;
 
@@ -33,7 +39,6 @@ body {
 
         li {
             opacity:0;
-            border: 5px solid #2d2d2d;
             position: absolute;
             @extend .awesome;
             background: {
@@ -65,6 +70,8 @@ body {
             font-size:60px;
         }
         .sub-site-title {
+                        visibility: hidden;
+
             text-transform: uppercase;
             font-size: 20px;
             color:#fff;
@@ -86,27 +93,26 @@ body {
     @include transition-timing-function(ease-out);
     width: 100%;
     margin:0 auto;
-
     position:absolute;
     top:0;
     left:0;
-    height: 100%;
-    width: 100%;
+    height:100%;
+    width:100%;
+    margin-bottom:12px;
     overflow: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 
     >ul {
         
         list-style:none;
         padding:0;
-        height:800px;
+        margin:0;
         >li {
             opacity: 0;
             color:#fff;
             display: table;
-            width:19.9%;
-            height:420px;
-
+            width:20%;
             background: {
                 repeat: no-repeat;
                 position: center center;
@@ -114,11 +120,12 @@ body {
 
             // @include filter(#{"grayscale(100%)"});
             @include background-size(cover);
-
-            @include transition(-webkit-filter 1s ease-out);
-
+            @include transition(-webkit-filter .3s ease-out);
             div {
-                @include transition(opacity 1s ease-out);
+                a {
+                    color:#fff;
+                }
+                @include transition(opacity .3s ease-out);
                 opacity:0;
                 display: table-cell;
                 text-align:center;
@@ -138,24 +145,44 @@ body {
                 }
             }
             &:hover {
-                @include filter(#{"grayscale(0%)"});
+                @include filter(#{"grayscale(100%)"});
                 div {
                     opacity: 1;
                 }
                 cursor: pointer;
             }
+
+
+            &.video {
+                h2{
+                    &:before {
+                        display: block;
+                        font-family:FontAwesome;
+                        content:'\f16a';
+                        font-size:60px;
+                    }
+                }
+            }
+
+
         }
-        li.wide {
-            height:840px;
-        }
+        li.wide { }
         li.content-box {
-            color:#000;
-            background-color:#fff;
+            a {
+                color:#000;    
+            }
+            
+            background-color:none;
             div {
                 h2 {
                     @include single-text-shadow(none);
                 }
                 opacity:1;
+            }
+        }
+        li.content-box.social {
+            h2 {
+                display:none;
             }
         }
     }
@@ -168,7 +195,6 @@ body {
 
 
 #work {
-    z-index: 999;
     position:absolute;
     top:0;
     left:0;
@@ -191,20 +217,22 @@ body {
     }
 
     .credits {
-        padding:50px;
+        text-align:left;
+        padding-left:20px;
         padding-top:0px;
+        padding-right:10px;
         width:500px;        
-                h2 {
-                    font-family: $font;
-                }
-                h3 {
-                    font-size:15px;
-                    font-family: 'Lato', sans-serif;
-                }
-        p {
-
+        h2 {
+            font-family: $font;
         }
-
+        h3 {
+            font-size:15px;
+            font-family: 'Lato', sans-serif;
+        }
+    }
+    .last {
+        border:1px solid #000;
+        width:200px;
     }
 
 
@@ -213,7 +241,6 @@ body {
     @include transform(translate(0, 0));
     transition: 500ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
-
 
 
 
@@ -230,9 +257,10 @@ Pagination Styles
     height: 100%;
     overflow: hidden;
     z-index: 4;
+    opacity: 0;
     background: #000;
-    background: rgba(0, 0, 0, 0.2);
-    @include transition(opacity 500s $bezier, background 500s $bezier);
+    background: rgba(0, 0, 0, 0.3);
+    transition: opacity 500ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
 
     .loading_bar {
         position: absolute;
@@ -245,8 +273,10 @@ Pagination Styles
     }
 
 }
-
-#nav {
+.loading.active {
+    opacity:1;
+}
+.tools {
     position:absolute;
     top:0;
     right:0;
@@ -275,13 +305,17 @@ Pagination Styles
         padding:0;
         margin:0;
         list-style:none;
+        width:100%;
         li {
             float:left;
-            padding:10px 20px;
+            width:20%;
             a {
                 font-family: $font;
-                font-size:10px;
+                font-size:20px;
                 color:#000;
+            }
+            &:hover {
+                text-decoration:none;
             }
 
         }
@@ -291,8 +325,10 @@ Pagination Styles
 
 
 .swiper-container {
+  width: 100%;
+  height: 100%;
 
-    margin:0 auto 100px auto;
+    margin:0 auto 0 auto;
     position:relative;
     overflow:hidden;
     -webkit-backface-visibility:hidden;
@@ -342,14 +378,43 @@ Pagination Styles
 }
 .swiper-slide {
     float: left;
-    margin-right:50px;
+      width: 100%;
+    height: 100%;
+    text-align:center;
 }
-
+.swiper-slide.video {
+ text-align:left;   
+}
 /* IE10 Windows Phone 8 Fixes */
 .swiper-wp8-horizontal {
     -ms-touch-action: pan-y;
 }
 .swiper-wp8-vertical {
     -ms-touch-action: pan-x;
+}
+#footer {
+    position:absolute;
+    bottom:0;
+    right:0;
+    z-index:4;
+    padding:5px;
+    font-size:11px;
+    background-color:rgba(255,255,255,.8)
+}
+
+
+
+
+/* ===============================================================
+Media Queries
+================================================================*/
+.hidden-mobile {
+  @include respond-to(mobile) { display:none;}
+}
+.hidden-tablet {
+    @include respond-to(tablet) { display:none;}
+}
+.hidden-desktop {
+    @include respond-to(desktop) { display:none;}
 }
 

@@ -338,6 +338,8 @@ module.exports = function (grunt) {
                         '.htaccess',
                         'images/{,*/}*.webp',
                         '{,*/}*.html',
+                        'data.json',
+                        'media/**',
                         'styles/fonts/{,*/}*.*',
                         'bower_components/' + (this.includeCompass ? 'sass-' : '') + 'bootstrap/' + (this.includeCompass ? 'fonts/' : 'dist/fonts/') +'*.*'
                     ]
@@ -381,7 +383,18 @@ module.exports = function (grunt) {
                 'imagemin',
                 'svgmin'
             ]
-        }
+        },
+        
+        shell: {  
+            staging: {
+                remoteDir:'inoui.io/guillaumeboulez/',
+                options: {
+                    stdout: true
+                },
+                command: 'gruntDeploy <%= yeoman.dist %> <%= remoteDir %>'
+            }
+        },
+
     });
 
 
@@ -454,4 +467,11 @@ module.exports = function (grunt) {
         'test',
         'build'
     ]);
+
+    var target = grunt.option('target') || 'staging';
+    grunt.registerTask('deploy', [
+        // 'build',
+        'shell:'+target
+    ]);
+    
 };
