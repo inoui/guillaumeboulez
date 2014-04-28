@@ -7,3 +7,20 @@ $default-text-shadow-color: rgba(black, 0.3);
 $default-text-shadow-blur: 10px;
 $default-text-shadow-v-offset: 5px;
 $bezier: cubic-bezier(0.645, 0.045, 0.355, 1.000);
+
+
+
+$break-small: 520px;
+$break-large: 1024px;
+
+@mixin respond-to($media) {
+  @if $media == mobile {
+    @media only screen and (max-width: $break-small) { @content; }
+  }
+  @else if $media == tablet {
+    @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) { @content; }
+  }
+  @else if $media == desktop {
+    @media only screen and (min-width: $break-large) { @content; }
+  }
+}
