@@ -6,16 +6,22 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Guillaume Boulez, Styliste</title>
+        <base href="/"> 
+        <meta name="fragment" content="!">
+
+        <title>Guillaume Boulez, Fashion Stylist & Creative Director</title>
+
         <meta name="description" content="">
+        <meta name="keywords" content="Fashion editor, creative director, stylist, stylism, fashion, paris, london, new york, beauty shoot">
         <meta name="viewport" content="width=device-width">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
         <!-- build:css styles/vendor.css -->
         <!-- bower:css -->
         <link rel="stylesheet" href="bower_components/sass-bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="bower_components/fontawesome-clean/font-awesome.min.css" />
         <!-- endbower -->
+        <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.css" />
+
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
@@ -24,6 +30,7 @@
 
     </head>
     <body>
+
         <!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -38,7 +45,7 @@
         <section class="home " id="home">
 
             <div class="header-text">
-                <h1 class="tlt " >Guillaume Boulez</h1>
+                <a href="/works" data-action="initList" title="Works"><h1 class="tlt " >Guillaume Boulez</h1></a>
                 <div class="sub-site-title">Stylist</div>
             </div>
 
@@ -52,70 +59,13 @@
 
         </section>
 
-        <section id="listing"></section>
+        <section id="listing">
+            
+        </section>
 
-
-        <script type="text/template" id='workListTpl'>
-        <ul>
-            <% _.each(projects, function(project) { %>
-                <% if (project.thumb) { %>
-
-                    <li  data-bgcoul="<%= project.bgcoul %>"  data-part="<%= project.part %>"  style="background-image:url(/media/<%= project.path %>/<%= project.thumb %>)" class="<%= project.class %> pack">
-                <% } else { %>
-                    <li  data-bgcoul="<%= project.bgcoul %>"  data-part="<%= project.part %>"  class="<%= project.class %> pack">
-                <% } %>
-                    <div class="<%= project.class %>">
-                        <h2><%= project.title %></h2>
-                        <h3><%= project.publication %></h3>
-                    </div>
-
-                </li>
-            <%});%>
-        </ul>
-
-
-        </script>
-
-
-
-
-        <script type="text/template" id='workTpl'>
-
-        <h1><%= project.publication %></h1>
-
-        <div class="tools">
-            <ul>
-                <li><a href="#" class="nav-close">x</a></li>
-                <li><a href="#" class="nav-prev">&#8592;</a></li>
-                <li><a href="#" class="nav-next">&#8594;</a></li>
-            </ul>
-        </div>
-
-
-
-            <div class="swiper-container">
-              <div class="swiper-wrapper">
-                  <div class="swiper-slide credits">
-                    <div class="sw-content">
-                        <h2><%= project.title %></h2>
-                        <p><%= project.credits %></p>
-                    </div>
-                  </div>
-
-                <% _.each(project.data, function(slide) { %>
-                  <div class="swiper-slide"  style="width:200px;">
-                    <div class="sw-content">
-                        <img src="/media/<%= project.path %>/<%= slide %>" alt="">
-                    </div>
-                  </div>
-                <%});%>
-
-                <div class="swiper-slide last">&nbsp;</div>
-
-              </div>
-            </div>
-
-        </script>
+        <footer id="footer">
+            © Guillaume Boulez 2014 - Website by <a href="http://inoui.io" target="_blank">inoui</a>
+        </footer>
 
 
 
@@ -144,6 +94,7 @@
         <script src="bower_components/textillate/jquery.textillate.js"></script>
         <script src="bower_components/textillate/assets/jquery.fittext.js"></script>
         <script src="bower_components/textillate/assets/jquery.lettering.js"></script>
+        <script src="bower_components/jquery-smart-vimeo-embed/jquery-smartvimeoembed.js"></script>
 
         <!-- endbuild -->
 
