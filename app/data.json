@@ -18,13 +18,13 @@
                 "WILD-0543-2.jpg"
             ]
         },{
-            "title": "ALMA JODOROWSKY-CHANTELLE DOSSER",
+            "title": "CHANTELLE DOSSER",
             "publication": "The WILD",
             "path" : "project_2",
             "thumb" : "AJ1.jpg",
             "class" : "wide",
             "bgcoul" : "#a691a4",
-            "uri":"/works/alma-jodorowsky-chantelle-dosser-for-the-wild",
+            "uri":"/works/chantelle-dosser-for-the-wild",
             "credits":"<strong>Photography</strong> by Chantelle Dosser<br/><strong>Hair stylist:</strong> Vinz  <br/><strong>Make Up artist:</strong> Sandrine Cano <br/><strong>Manicurist:</strong> Sandrine Lanaud<br/><strong>Models:</strong> Myf Shepherd and Kameron",
             "data" : [
                 "AJ1.jpg",
@@ -36,7 +36,7 @@
                 "AJ7.jpg"
             ]
         },{
-            "title": "CODIE YOUNG - NICOLAS VALOIS",
+            "title": "NICOLAS VALOIS",
             "publication": "The WILD",
             "path" : "project_3",
             "thumb" : "NV92_010_035-03.jpg",
@@ -60,7 +60,7 @@
                 "NV92_120_199-03.jpg"
             ]
         },{
-            "title": "ESTHER - JEAN PACOME DEDIEU",
+            "title": "JEAN PACOME DEDIEU",
             "publication": "Intersection",
             "path" : "project_4",
             "thumb" : "comp-visuel-1_V6.jpg",
@@ -77,7 +77,7 @@
                 "comp-visuel-6_V5.jpg"
             ]
         },{
-            "title": "LILI SUMNER - JAMES ANASTASI",
+            "title": "JAMES ANASTASI",
             "publication": "The WILD",
             "path" : "project_5",
             "thumb" : "TheWild_1.jpg",
@@ -97,7 +97,7 @@
                 "TheWild_9.jpg"
             ]
         },{
-            "title": "M.I.A. - SAGA SIG",
+            "title": "SAGA SIG",
             "publication": "The WILD",
             "path" : "project_6",
             "thumb" : "MIA1.jpg",
@@ -115,7 +115,7 @@
             ]
 
         },{
-            "title": "MAGDA LAGUINGE & PAU BERTOLINI - ELLEN VON UNWERTH",
+            "title": "ELLEN VON UNWERTH",
             "publication": "The WILD",
             "path" : "project_7",
             "thumb" : "03-0991.jpg",
@@ -140,7 +140,7 @@
             ]
 
         },{
-            "title": "MYF SHEPHERD - CHANTELLE DOSSER",
+            "title": "CHANTELLE DOSSER",
             "publication": "The WILD",
             "path" : "project_8",
             "thumb" : "01.jpg",
@@ -172,7 +172,7 @@
                 "14.jpg"
             ]
         },{
-            "title": "SASHA GOLD - MARCO TOMMASI",
+            "title": "MARCO TOMMASI",
             "publication": "L'Officiel Ukraine",
             "path" : "project_9",
             "thumb" : "9975-1-copie.jpg",
@@ -270,7 +270,8 @@
             ]
         },{
             "title": "NETWORK",
-            "publication": "<ul class='list-inline social'><li><a href='https://www.facebook.com/guillaume.boulez' title='Follow me on Facebook' target='_blank'><i class='fa fa-facebook'></i> &nbsp;</a></li><li><a href='https://twitter.com/guillaumeboulez' title='Follow me on Twitter'  target='_blank'><i class='fa fa-twitter'></i> &nbsp;</a></li><li><a href='http://www.pinterest.com/source/guillaumeboulez.com/' target='_blank'><i class='fa fa-pinterest'></i> &nbsp;</a></li><li><a href='http://guillaumeboulez.tumblr.com' target='_blank'><i class='fa fa-tumblr'></i> &nbsp;</a></li><li><a href='http://instagram.com/guillaumeboulez' target='_blank'><i class='fa fa-instagram'></i> &nbsp;</a></li></ul>",
+            "publication": "",
+            "html": "<ul class='list-inline social'><li><a href='https://www.facebook.com/guillaume.boulez' title='Follow me on Facebook' target='_blank'><i class='fa fa-facebook'></i> &nbsp;</a></li><li><a href='https://twitter.com/guillaumeboulez' title='Follow me on Twitter'  target='_blank'><i class='fa fa-twitter'></i> &nbsp;</a></li><li><a href='http://www.pinterest.com/source/guillaumeboulez.com/' target='_blank'><i class='fa fa-pinterest'></i> &nbsp;</a></li><li><a href='http://guillaumeboulez.tumblr.com' target='_blank'><i class='fa fa-tumblr'></i> &nbsp;</a></li><li><a href='http://instagram.com/guillaumeboulez' target='_blank'><i class='fa fa-instagram'></i> &nbsp;</a></li></ul>",
             "class" : "content-box social"
         },{
             "title": "GUILLAUME BOULEZ",
@@ -290,7 +291,7 @@
             "uri" : "/contact/",
             "publication": "&nbsp;",
             "class" : "content-box",
-            "credits": "<p>For all bookings, contact Tina Lignell and Helen Ritchie at <a href='http://www.mfilomeno.com' target='_blank'>Michele Filomeno</a>. For other inquiries : </p><hr/><form method='post' id='frmContact'><fieldset><div class='form-group'><label  for='email'>Email</label>  <input id='email' name='email' type='text' placeholder='Your email' class='form-control input-md' required=''></div><div class='form-group'><label for='subject'>Subject</label>  <input id='subject' name='subject' type='text' placeholder='Your subject' class='form-control input-md' required=''>    </div></fieldset><div class='form-group'><label  for='textarea'>Message</label><textarea class='form-control' id='textarea' name='textarea'></textarea></div><div class='form-group'><label for='valid'></label><button id='valid' name='valid' class='btn btn-default'>Send</button></div>",
+            "credits": "<p>For all bookings:<br/>Tina Lignell and Helen Ritchie at <a href='http://www.mfilomeno.com/stylist/guillaume-boulez/' target='_blank'>Michele Filomeno</a>.<br/>For other inquiries: </p><hr/><form method='post' id='frmContact'><fieldset><div class='form-group'><label  for='email'>Email</label>  <input id='email' name='email' type='text' placeholder='Your email' class='form-control input-md' required=''></div><div class='form-group'><label for='subject'>Subject</label>  <input id='subject' name='subject' type='text' placeholder='Your subject' class='form-control input-md' required=''>    </div></fieldset><div class='form-group'><label  for='textarea'>Message</label><textarea class='form-control' id='textarea' name='textarea'></textarea></div><div class='form-group'><label for='valid'></label><button id='valid' name='valid' class='btn btn-default'>Send</button></div>",
             "path" : "about",
             "data" : [
                 "contact.jpg"

@@ -9,9 +9,14 @@
 
     gb.prototype.init = function() {
         this.document_title = "Guillaume Boulez, Fashion Stylist & Creative Director";
+        
         this._isInit = false;
-        $('body').on('click', "a[target!='_blank']", $.proxy(this._history, this));
-        $(document).on('submit', "form", $.proxy(this.submitForm, this));
+        this._isIos = /iphone|ipad/i.test(navigator.userAgent);
+
+        // $('body').on('click touchstart', "a[target!='_blank']", $.proxy(this._history, this));
+        $('body').on('click touchstart', "[data-action]", $.proxy(this._history, this));
+        
+        $(document).on('submit', "form", $.proxy(this.submitForm, this));        
         
         $.getJSON( "data.json", $.proxy(this.onReady, this));
         $(window).resize(_.debounce($.proxy(this.resizeList, this), 500));
@@ -25,11 +30,16 @@
     }
 
     gb.prototype._history = function(evt) {
-        evt && evt.preventDefault();
+        alert(evt.currentTarget);
+        evt && evt.stopPropagation() && evt.preventDefault();
         var $a = $(evt.currentTarget);
         if ($a.attr('target') == '_blank') {
             return true;
         }
+        var href = $(evt.currentTarget).attr("href");
+        // _gaq.push(['_trackPageview', href]);
+        ga('send', 'event', 'Downloaded Video', 'Yes');
+
         history.pushState({}, '', $(evt.currentTarget).attr("href"));
         document.title = this.document_title + ' | ' + $(evt.currentTarget).attr("title");
         if ($a.data('action')) this[$a.data('action')](evt);
@@ -84,6 +94,7 @@
 
     gb.prototype.initList = function() {
         clearTimeout(this.hometm);
+        $("#listing").show();
         $(".home").fadeOut(1000, $.proxy(this.setList, this))
     }
 
@@ -166,7 +177,7 @@
         var html = gb.templates.workTpl;
 
         this._tn = 0;
-        $('#work').append(
+        $('.work').append(
             _.template(html, {project:this._images.projects[w]} )
         );
         $('.swiper-container').height($(window).height()-150);
@@ -213,7 +224,8 @@
         });
 
         $('.vimeo-thumb').smartVimeoEmbed({
-            autoplay:true
+            autoplay:true,
+            width:$(window).width() - 550
         }).trigger('click');
 
     }
@@ -222,7 +234,7 @@
         $("#listing").show();
         $('.active').removeClass('active');
         setTimeout(function() {
-            $('#work').remove();
+            $('.work').remove();
             this._swiper = null;
         }, 1000);
     }
@@ -267,20 +279,33 @@
     gb.prototype._loading = function(evt, image) {
         this._tn++;
         var n = this._tn / evt.images.length * 100;
-        var $img = $(image.img);
-        $img.height($('.swiper-container').height());
-        var w = $(image.img).height()*image.img.width/image.img.height;
-        $img.width(w);
-        $img.closest('.swiper-slide').css({'width':w+20});
-
+        this.resizeSlideImage(image);
         $("#loading")
             .find(".loading_bar")
             .css("width", n+'%');
     }
 
+    gb.prototype.resizeSlideImage = function(image) {
+        var $img = $(image.img);
+        $img.height($('.swiper-container').height());
+        var w = $(image.img).height() * image.img.width / image.img.height;
+        $img.width(w);
+        $img.closest('.swiper-slide').css({'width':w+20});
+    }
+
     gb.prototype._isMobile = function() {
         return (screen.width <= 1024);
     }
+
+    gb.prototype._tapped = function(event) {
+        var touchable = 'ontouchstart' in document.documentElement;
+        if((touchable && event.which === 0) || (!touchable && event.which === 1)){
+            return true;
+        }
+        return false;
+    }
+
+
 
     $(window).on('load', function () {
         var app = new GuillaumeBoulez().init();
@@ -301,10 +326,9 @@ gb.templates = {
                     <li  data-bgcoul="<%= project.bgcoul %>"  data-part="<%= project.part %>"  class="<%= project.class %> pack"> \
                 <% } %> \
                         <div class="<%= project.class %>"> \
-                            <a href="<%= project.uri %>" data-action="openProject" title="<%= project.title %> - <%= project.publication %>" class="goto"> \
-                                <h2><%= project.title %></h2> \
-                                <h3><%= project.publication %></h3> \
-                            </a> \
+                            <h2><a href="<%= project.uri %>" data-action="openProject" title="<%= project.title %> - <%= project.publication %>" class="goto"><%= project.title %></a></h2> \
+                            <h3><%= project.publication %></h3> \
+                            <%= project.html %> \
                         </div> \
                     </a> \
                 </li> \
@@ -321,19 +345,22 @@ gb.templates = {
         </div> \
         <div class="swiper-container"> \
           <div class="swiper-wrapper"> \
-              <div class="swiper-slide credits hidden-mobile hidden-tablet"> \
+              <div class="swiper-slide credits hidden-mobile hidden-tablet" style="max-width:500px;"> \
+                <h2><%= project.title %></h2> \
+                <% if (project.video) { %> \
+                  <div class="swiper-slide video"> \
+                    <div class="sw-content"> \
+                        <img src="http://placehold.it/640x360" class="vimeo-thumb" data-vimeo-id="<%= project.video %>" /> \
+                    </div> \
+                  </div> \
+                <% } %> \
                 <div class="sw-content"> \
-                    <h2><%= project.title %></h2> \
                     <p><%= project.credits %></p> \
+                    <p class="shareme"> \
+                        <ul class="list-inline social2"><li><a href="https://www.facebook.com/guillaume.boulez" title="Follow me on Facebook" target="_blank"><i class="fa fa-facebook"></i> &nbsp;</a></li><li><a href="https://twitter.com/guillaumeboulez" title="Follow me on Twitter"  target="_blank"><i class="fa fa-twitter"></i> &nbsp;</a></li><li><a href="http://www.pinterest.com/source/guillaumeboulez.com/" target="_blank"><i class="fa fa-pinterest"></i> &nbsp;</a></li><li><a href="http://guillaumeboulez.tumblr.com" target="_blank"><i class="fa fa-tumblr"></i> &nbsp;</a></li><li><a href="http://instagram.com/guillaumeboulez" target="_blank"><i class="fa fa-instagram"></i> &nbsp;</a></li></ul> \
+                    </p> \
                 </div> \
               </div> \
-            <% if (project.video) { %> \
-              <div class="swiper-slide video"> \
-                <div class="sw-content"> \
-                    <img src="http://placehold.it/640x360" class="vimeo-thumb" data-vimeo-id="<%= project.video %>" /> \
-                </div> \
-              </div> \
-            <% } %> \
             <% _.each(project.data, function(slide) { %> \
               <div class="swiper-slide"> \
                 <div class="sw-content"> \

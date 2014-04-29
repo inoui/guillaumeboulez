@@ -91,6 +91,7 @@ a:hover {
     @include transition-property(-webkit-filter opacity);
     @include transition-duration(1s);
     @include transition-timing-function(ease-out);
+    display: none;
     width: 100%;
     margin:0 auto;
     position:absolute;
@@ -122,17 +123,18 @@ a:hover {
             @include background-size(cover);
             @include transition(-webkit-filter .3s ease-out);
             div {
-                a {
-                    color:#fff;
-                }
                 @include transition(opacity .3s ease-out);
-                opacity:0;
                 display: table-cell;
+                @include respond-to(desktop) {
+                    opacity:0;
+                    vertical-align: middle;
+                }
+                vertical-align: bottom;
                 text-align:center;
-                vertical-align: middle;
                 h2 {
                     padding:0 10px;
                     font-family: $font;
+                    font-weight:100;
                     @include single-text-shadow;
                 }
                 h3 {
@@ -140,8 +142,23 @@ a:hover {
                     font-family: 'Lato', sans-serif;
                 }
 
-                .publication {
-                    text-align:center;
+                // @include respond-to(tablet) {
+                //     h2 {
+                //         font-size:18px;
+                //         margin:0;
+                //     } 
+                //     h3 {
+                //         margin:10px;
+                //         font-size:14px;   
+                //     }
+                    
+                // }
+
+                a {
+                    color:#fff;
+                    &:hover {
+                        opacity: 1;
+                    }
                 }
             }
             &:hover {
@@ -178,6 +195,9 @@ a:hover {
                     @include single-text-shadow(none);
                 }
                 opacity:1;
+                h3 {
+                    color:#000;
+                }
             }
         }
         li.content-box.social {
@@ -194,7 +214,7 @@ a:hover {
 }
 
 
-#work {
+.work {
     position:absolute;
     top:0;
     left:0;
@@ -221,13 +241,20 @@ a:hover {
         padding-left:20px;
         padding-top:0px;
         padding-right:10px;
-        width:500px;        
+        position:relative;
+        width:500px;
         h2 {
             font-family: $font;
         }
-        h3 {
-            font-size:15px;
-            font-family: 'Lato', sans-serif;
+        .sw-content {
+            position:absolute;
+            width:90%;
+            bottom:0;
+            h3 {
+                font-size:15px;
+                font-family: 'Lato', sans-serif;
+            }
+
         }
     }
     .last {
@@ -237,7 +264,7 @@ a:hover {
 
 
 }
-.active #work {
+.active .work {
     @include transform(translate(0, 0));
     transition: 500ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
@@ -308,7 +335,7 @@ Pagination Styles
         width:100%;
         li {
             float:left;
-            width:20%;
+            
             a {
                 font-family: $font;
                 font-size:20px;
@@ -319,8 +346,16 @@ Pagination Styles
             }
 
         }
+    &.social li {
+        width:20%;
+    }
+    &.social2 li a {
+        font-size:16px;
+    }
 }
-
+.shareme {
+    border-top:1px solid #DEDEDE;
+}
 
 
 
@@ -394,6 +429,7 @@ Pagination Styles
 }
 #footer {
     position:absolute;
+    display:none;
     bottom:0;
     right:0;
     z-index:4;
