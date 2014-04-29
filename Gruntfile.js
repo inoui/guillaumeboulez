@@ -421,8 +421,8 @@ module.exports = function (grunt) {
             'concurrent:server',
             'autoprefixer',
             'express:dev',
+            // 'connect:livereload',            
             'open',
-            // 'connect:livereload',
             'watch'
         ]);
     });

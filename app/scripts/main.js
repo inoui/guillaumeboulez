@@ -13,8 +13,8 @@
         this._isInit = false;
         this._isIos = /iphone|ipad/i.test(navigator.userAgent);
 
-        // $('body').on('click touchstart', "a[target!='_blank']", $.proxy(this._history, this));
-        $('body').on('click touchstart', "[data-action]", $.proxy(this._history, this));
+        $('body').on('click', "a[target!='_blank']", $.proxy(this._history, this));
+        // $('body').on('click touchstart', "[data-action]", $.proxy(this._history, this));
         
         $(document).on('submit', "form", $.proxy(this.submitForm, this));        
         
@@ -26,12 +26,11 @@
     gb.prototype.submitForm = function(evt) {
         evt && evt.preventDefault();
         $("#frmContact").html('<h3>Thank you, you will soon received an answer.</h3>');
-
     }
 
     gb.prototype._history = function(evt) {
-        alert(evt.currentTarget);
-        evt && evt.stopPropagation() && evt.preventDefault();
+        alert('click');
+        evt && evt.preventDefault();
         var $a = $(evt.currentTarget);
         if ($a.attr('target') == '_blank') {
             return true;
@@ -52,6 +51,7 @@
         this._images = data;
         this.pathname = null;
         if (pathname != '/') {
+
             this.pathname = pathname;
             this._stopLoading();
             $(".home").hide();
@@ -94,12 +94,11 @@
 
     gb.prototype.initList = function() {
         clearTimeout(this.hometm);
-        $("#listing").show();
         $(".home").fadeOut(1000, $.proxy(this.setList, this))
     }
 
     gb.prototype.setList = function() {
-
+        $("#listing").show();
         var html = gb.templates.workListTpl;
         $('#listing').append(_.template(html, {projects:this._randomize(this._images.projects)}));
         this.resizeList();
@@ -172,7 +171,7 @@
         var $this = $(evt.currentTarget).closest('li');
         this._startLoading();
         
-        $('<div/>', {'id':'work'}).appendTo('body');
+        $('<div/>', {'class':'work'}).appendTo('body');
         var w = $this.index();
         var html = gb.templates.workTpl;
 
@@ -317,13 +316,7 @@ gb.templates = {
         <ul> \
             <% _.each(projects, function(project) { %> \
                 <% if (project.thumb) { %> \
-                    <% if (project.class=="video") { %> \
-                        <li  data-bgcoul="<%= project.bgcoul %>"  data-part="<%= project.part %>"  style="background-image:url(<%= project.thumb %>)" class="<%= project.class %> pack"> \
-                    <% } else { %> \
-                        <li  data-bgcoul="<%= project.bgcoul %>"  data-part="<%= project.part %>"  style="background-image:url(/media/<%= project.path %>/<%= project.thumb %>)" class="<%= project.class %> pack"> \
-                    <% } %> \
-                <% } else { %> \
-                    <li  data-bgcoul="<%= project.bgcoul %>"  data-part="<%= project.part %>"  class="<%= project.class %> pack"> \
+                    <li  data-bgcoul="<%= project.bgcoul %>"  data-part="<%= project.part %>"  style="background-image:url(/media/<%= project.path %>/<%= project.thumb %>)" class="<%= project.class %> pack"> \
                 <% } %> \
                         <div class="<%= project.class %>"> \
                             <h2><a href="<%= project.uri %>" data-action="openProject" title="<%= project.title %> - <%= project.publication %>" class="goto"><%= project.title %></a></h2> \

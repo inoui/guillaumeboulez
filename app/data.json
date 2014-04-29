@@ -65,6 +65,7 @@
             "path" : "project_4",
             "thumb" : "comp-visuel-1_V6.jpg",
             "class" : "",
+            "credits" : "<strong>Photography</strong> by Jean-Pacome Dedieu <br/><strong>Hair stylist:</strong> Charlie Le Mindu <br/><strong>Make Up artist:</strong> Karin Westerlund <br/><strong>Model:</strong> Esther Boiteux",
             "bgcoul" : "#66e0e1",
             "uri":"/works/esther-jean-pacome-dedieu-for-intersection",
             "data" : [
@@ -298,29 +299,32 @@
             ]
 
         },{
-            "title": "MOJEH VIDEO",
+            "title": "ELLEN VON UNWERTH",
             "video" :"92144341",
             "publication": "MOJEH",
             "uri":"/works/video-mojeh",
+            "path" : "video",
             "class" : "video",
-            "thumb" : "http://i.vimeocdn.com/video/471774365_640.jpg",
-            "credits" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, hic, eaque, sit, odit tenetur recusandae maxime laboriosam reprehenderit facere quae ratione commodi incidunt impedit quas culpa necessitatibus minus dicta porro."
+            "thumb" : "471774365_640.jpg",
+            "credits" : "<strong>Photography</strong> by Ellen von Unwerth <br/><strong>Hair stylist:</strong> Vinz <br/><strong>Make Up artist:</strong> Regine Bedot <br/><strong>Manicurist:</strong> Sophie A.<br/><strong>Model:</strong> Eva Doll, Charlotte Di Calypso, Tarik Lakehal, Alain Gossuin and Andy Gilet"
         },{
-            "title": "NIGHT BLINDNESS",
+            "title": "AMBER GRAY",
             "video" :"92144340",
             "uri":"/works/vide-night-blindness",
-            "publication": "MOJEH",
+            "publication": "VOGUE ITALIA",
             "class" : "video",
-            "thumb" : "http://i.vimeocdn.com/video/471774387_640.jpg",
-            "credits" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, hic, eaque, sit, odit tenetur recusandae maxime laboriosam reprehenderit facere quae ratione commodi incidunt impedit quas culpa necessitatibus minus dicta porro."
+            "path" : "video",
+            "thumb" : "471774387_640.jpg",
+            "credits" : "<strong>Direction</strong> by Amber Gray <br/><strong>Director of photography:</strong> Julian Bernstein <br/><strong>Hair stylist:</strong> Yoichi Tomizawa<br/><strong>Make Up artist:</strong> David Tibolla<br/><strong>Talent:</strong> Yomi Abiola"
         },{
-            "title": "ALMA JODOROWSKY",
+            "title": "CHANTELLE DOSSER & GUILLAUME DELORME",
             "video" :"92144339",
             "uri":"/works/video-alma-jodorowsky",
-            "publication": "MOJEH",
+            "publication": "The WILD",
+            "path" : "video",
             "class" : "video",
-            "thumb" : "http://i.vimeocdn.com/video/471774375_640.jpg",
-            "credits" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, hic, eaque, sit, odit tenetur recusandae maxime laboriosam reprehenderit facere quae ratione commodi incidunt impedit quas culpa necessitatibus minus dicta porro."
+            "thumb" : "471774375_640.jpg",
+            "credits" : "<strong>Direction</strong> by Chantelle Dosser & Guillaume Delorme <br/><strong>Hair stylist and Make Up artist:</strong> Gilles Degivry <br/><strong>Talent:</strong> Alma Jodorowsky"
         }
     ]
 }
